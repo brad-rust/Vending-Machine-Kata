@@ -8,5 +8,15 @@ namespace VendingMachine_Kata
 {
     public class VendingMachine
     {
+
+        public void insert(double dime)
+        {
+            return;
+        }
+
+        public string displayedMessage()
+        {
+            return ".10";
+        }
     }
 }
