@@ -11,11 +11,14 @@ namespace VendingMachine_Kata
 
         public double credit { private set; get; }
         public Display display;
+        public Dispenser dispenser;
         private Coin coin;
-                
+        
+
         public VendingMachine()
         {
             this.display = new Display();
+            this.dispenser = new Dispenser();
         }
 
         public void insert(string _coin)
@@ -25,6 +28,11 @@ namespace VendingMachine_Kata
             this.display.changeDisplayedCreditValue(this.credit);            
         }
 
-
+        public void pressButton(string item)
+        {
+            Product product = new Product(item);
+            if (this.credit >= product.cost)
+                this.dispenser.addContents(product.name);
+        }
     }
 }

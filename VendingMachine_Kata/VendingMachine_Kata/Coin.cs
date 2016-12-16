@@ -30,5 +30,7 @@ namespace VendingMachine_Kata
             validCoins.TryGetValue(coin, out value);
             return value;
         }
+
+
     }
 }

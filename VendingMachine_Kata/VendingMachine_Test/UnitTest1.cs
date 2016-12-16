@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using VendingMachine_Kata;
@@ -27,6 +28,17 @@ namespace VendingMachine_Test
             vm.insert("quarter");
             vm.insert("quarter");
             Assert.AreEqual(vm.display.availableCredit, "0.50");
+        }
+
+        [TestMethod]
+        public void whenEnoughCreditIsAvailable_VendingMachineVends_Item()
+        {
+            VendingMachine vm = new VendingMachine();
+            vm.insert("quarter");
+            vm.insert("quarter");
+            vm.pressButton("chips");
+            List<string> items = new List<string>() { "chips" };
+            CollectionAssert.AreEqual(vm.dispenser.contents, items);
         }
     }
 }
