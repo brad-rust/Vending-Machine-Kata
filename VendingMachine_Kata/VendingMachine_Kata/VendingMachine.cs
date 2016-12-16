@@ -9,14 +9,22 @@ namespace VendingMachine_Kata
     public class VendingMachine
     {
 
-        public void insert(double dime)
+        public double credit { private set; get; }
+        public Display display;
+        private Coin coin;
+                
+        public VendingMachine()
         {
-            return;
+            this.display = new Display();
         }
 
-        public string displayedMessage()
+        public void insert(string _coin)
         {
-            return ".10";
+            coin = new Coin(_coin);
+            this.credit += coin.value;
+            this.display.changeDisplayedCreditValue(this.credit);            
         }
+
+
     }
 }

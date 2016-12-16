@@ -13,11 +13,11 @@ namespace VendingMachine_Test
         private const double quarter = .25;
 
         [TestMethod]
-        public void whenValidCoingIsInserted_vendingMachineDisplaysAvailableCredit()
+        public void whenValidCoinIsInserted_vendingMachineDisplaysAvailableCredit()
         {
             VendingMachine vm = new VendingMachine();
-            vm.insert(dime);
-            Assert.AreEqual(vm.displayedMessage(), ".10");
+            vm.insert("dime");
+            Assert.AreEqual(vm.display.availableCredit, "0.10");
         }
     }
 }
