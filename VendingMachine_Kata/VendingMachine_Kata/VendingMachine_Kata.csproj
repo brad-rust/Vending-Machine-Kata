@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13D0FC40-F136-4147-B542-D3879DCB997A}</ProjectGuid>
+    <ProjectGuid>{235B144B-C36A-48DB-B5B0-34775F5CD785}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VendingMachine_Kata</RootNamespace>

@@ -8,11 +8,5 @@ namespace VendingMachine_Kata
 {
     public class VendingMachine
     {
-        public double credit {private set; get;}
-
-        public void addCoin(string coin)
-        {
-            this.credit = .10;
-        }
     }
 }
