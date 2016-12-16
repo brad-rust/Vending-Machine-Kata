@@ -8,11 +8,21 @@ namespace VendingMachine_Kata
 {
     public class Display
     {
-        public string availableCredit { private set; get; }
+        private string message;
         
-        public void changeDisplayedCreditValue(double credit)
+        public void setDisplayToCredit(double credit)
         {
-            this.availableCredit = string.Format("{0:0.00}", credit);
+            this.message = string.Format("{0:0.00}", credit);
+        }
+        
+        public void setDisplayToPrice(double price)
+        {
+            this.message = string.Format("{0:0.00}", price);
+        }
+
+        public string displayMessage()
+        {
+            return this.message;
         }
     }
 }

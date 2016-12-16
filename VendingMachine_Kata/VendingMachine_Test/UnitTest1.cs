@@ -18,7 +18,7 @@ namespace VendingMachine_Test
         {
             VendingMachine vm = new VendingMachine();
             vm.insert("dime");
-            Assert.AreEqual(vm.display.availableCredit, "0.10");
+            Assert.AreEqual(vm.display.displayMessage(), "0.10");
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace VendingMachine_Test
             VendingMachine vm = new VendingMachine();
             vm.insert("quarter");
             vm.insert("quarter");
-            Assert.AreEqual(vm.display.availableCredit, "0.50");
+            Assert.AreEqual(vm.display.displayMessage(), "0.50");
         }
 
         [TestMethod]
@@ -39,6 +39,15 @@ namespace VendingMachine_Test
             vm.pressButton("chips");
             List<string> items = new List<string>() { "chips" };
             CollectionAssert.AreEqual(vm.dispenser.contents, items);
+        }
+
+        [TestMethod]
+        public void whenTooLittleCredit_vendingMachineDisplaysCostOfItem()
+        {
+            VendingMachine vm = new VendingMachine();
+            vm.insert("quarter");
+            vm.pressButton("chips");
+            Assert.AreEqual(vm.display.displayMessage(), "0.50");
         }
     }
 }

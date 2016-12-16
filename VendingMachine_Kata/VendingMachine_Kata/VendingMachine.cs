@@ -25,7 +25,7 @@ namespace VendingMachine_Kata
         {
             coin = new Coin(_coin);
             this.credit += coin.value;
-            this.display.changeDisplayedCreditValue(this.credit);            
+            this.display.setDisplayToCredit(this.credit);            
         }
 
         public void pressButton(string item)
@@ -33,6 +33,8 @@ namespace VendingMachine_Kata
             Product product = new Product(item);
             if (this.credit >= product.cost)
                 this.dispenser.addContents(product.name);
+            else
+                this.display.setDisplayToPrice(product.cost);
         }
     }
 }
