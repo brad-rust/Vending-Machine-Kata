@@ -11,10 +11,24 @@ namespace VendingMachine_Kata
         public string name { set; get; }
         public double value { set; get; }
 
+        private Dictionary<string, double> validCoins = new Dictionary<string, double>
+        {
+            {"nickel", 05 },
+            {"dime", .10 },
+            {"quarter", .25 }
+        };
+
         public Coin(string coin)
         {
             this.name = coin;
-            this.value = .10;
+            this.value = getValue(coin);
+        }
+
+        private double getValue(string coin)
+        {
+            double value = 0;
+            validCoins.TryGetValue(coin, out value);
+            return value;
         }
     }
 }

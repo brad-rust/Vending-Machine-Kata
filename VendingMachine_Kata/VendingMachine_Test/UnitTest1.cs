@@ -19,5 +19,14 @@ namespace VendingMachine_Test
             vm.insert("dime");
             Assert.AreEqual(vm.display.availableCredit, "0.10");
         }
+
+        [TestMethod]
+        public void whenMultipleCoinsAreInserted_vendingMachineDisplaysAvailableCredit()
+        {
+            VendingMachine vm = new VendingMachine();
+            vm.insert("quarter");
+            vm.insert("quarter");
+            Assert.AreEqual(vm.display.availableCredit, "0.50");
+        }
     }
 }
