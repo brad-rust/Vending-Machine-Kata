@@ -10,6 +10,12 @@ namespace VendingMachine_Kata
     {
         private string message;
         private const string thankYou = "THANK YOU";
+        private const string insertCoin = "INSERT COIN";
+
+        public Display()
+        {
+            setDisplayToInsertCoin();
+        }
 
         public void setDisplayToCredit(double credit)
         {
@@ -24,6 +30,11 @@ namespace VendingMachine_Kata
         public void setDisplayThankYou()
         {
             this.message = thankYou;
+        }
+
+        public void setDisplayToInsertCoin()
+        {
+            this.message = insertCoin;
         }
 
         public string displayMessage()

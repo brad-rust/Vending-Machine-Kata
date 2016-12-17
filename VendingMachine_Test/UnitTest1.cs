@@ -65,6 +65,13 @@ namespace VendingMachine_Test
 
         }
 
+        [TestMethod]
+        public void whenMachineDoesNotContainCoins_displayDisplaysInsertCoins()
+        {
+            VendingMachine vm = new VendingMachine();
+            Assert.AreEqual(vm.display.displayMessage(), "INSERT COIN");
+        }
+
         private VendingMachine addOneDollarToNewVendingMachine()
         {
             VendingMachine vm = new VendingMachine();
