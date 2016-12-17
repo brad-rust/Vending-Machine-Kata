@@ -11,17 +11,26 @@ namespace VendingMachine_Kata
         private string message;
         private const string thankYou = "THANK YOU";
         private const string insertCoin = "INSERT COIN";
+        private const string soldOut = "SOLD OUT";
+        private const string exactChange = "EXACT CHANGE ONLY";
+        private double credit;
 
         public Display()
         {
-            setDisplayToInsertCoin();
+            setDisplayExactChange();
         }
 
-        public void setDisplayToCredit(double credit)
+        public void setDisplayToCredit(double _credit)
         {
-            this.message = string.Format("{0:0.00}", credit);
+            this.credit = _credit;
+            this.message = string.Format("{0:0.00}", this.credit);
         }
-        
+
+        public void setDisplayToCredit()
+        {
+            this.message = string.Format("{0:0.00}", this.credit);
+        }
+
         public void setDisplayToPrice(double price)
         {
             this.message = string.Format("{0:0.00}", price);
@@ -37,8 +46,23 @@ namespace VendingMachine_Kata
             this.message = insertCoin;
         }
 
+        public void setDisplayToSoldOut()
+        {
+            this.message = soldOut;
+        }
+
+        public void setDisplayExactChange()
+        {
+            this.message = exactChange;
+        }
+
         public string displayMessage()
         {
+            if (this.message == soldOut)
+            {
+                setDisplayToCredit();
+                return soldOut;
+            }
             return this.message;
         }
     }

@@ -11,7 +11,7 @@ namespace VendingMachine_Kata
         public string name { set; get; }
         public double value { set; get; }
 
-        private Dictionary<string, double> validCoins = new Dictionary<string, double>
+        private readonly Dictionary<string, double> validCoins = new Dictionary<string, double>
         {
             {"nickel", 05 },
             {"dime", .10 },

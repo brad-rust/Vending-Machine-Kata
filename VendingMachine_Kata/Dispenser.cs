@@ -9,7 +9,6 @@ namespace VendingMachine_Kata
     public class Dispenser
     {
         public List<string> contents { private set; get; }
-
         public Dispenser()
         {
             this.contents = new List<string>();

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{235B144B-C36A-48DB-B5B0-34775F5CD785}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2C0BBFCA-22DC-4D75-BA36-026AE9C5F5DF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VendingMachine_Kata</RootNamespace>
-    <AssemblyName>VendingMachine_Kata</AssemblyName>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
+    <AssemblyName>ConsoleApplication1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,16 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeBank.cs" />
-    <Compile Include="ProductButton.cs" />
-    <Compile Include="Coin.cs" />
-    <Compile Include="CoinReturn.cs" />
-    <Compile Include="Dispenser.cs" />
-    <Compile Include="Display.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="VendingMachine.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VendingMachine_Kata\VendingMachine_Kata.csproj">
+      <Project>{235b144b-c36a-48db-b5b0-34775f5cd785}</Project>
+      <Name>VendingMachine_Kata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VendingMachine_Test\VendingMachine_Test.csproj">
+      <Project>{19e9b2ed-7541-4daa-8fe2-a12bd215cc69}</Project>
+      <Name>VendingMachine_Test</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

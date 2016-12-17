@@ -17,6 +17,12 @@ namespace VendingMachine_Test
         private const string sDime = "dime";
         private const string sQuarter = "quarter";
 
+        private ProductButton chipsButton = ProductButton.Chips;
+        private ProductButton colaButton = ProductButton.Cola;
+        private ProductButton candyButton = ProductButton.Candy;
+
+        private Product chips = new Chips();
+
         [TestMethod]
         public void whenValidCoinIsInserted_vendingMachineDisplaysAvailableCredit()
         {
@@ -36,7 +42,8 @@ namespace VendingMachine_Test
         public void whenEnoughCreditIsAvailable_VendingMachineVends_Item()
         {
             VendingMachine vm = add2QuartersToNewVendingMachine();
-            vm.pressProductButton(vm.productButton.Chips);
+            vm.inventory.addInventory(chips, 1);
+            vm.pressProductButton(chipsButton);
             List<string> items = new List<string>() { "chips" };
             CollectionAssert.AreEqual(vm.dispenser.contents, items);
         }
@@ -45,7 +52,8 @@ namespace VendingMachine_Test
         public void thankYouMessageIsDisplayed_afterMachineVendsItem()
         {
             VendingMachine vm = addOneDollarToNewVendingMachine();
-            vm.pressProductButton(vm.productButton.Chips);
+            vm.inventory.addInventory(chips, 1);
+            vm.pressProductButton(chipsButton);
             Assert.AreEqual(vm.display.displayMessage(), "THANK YOU");
         }
 
@@ -53,7 +61,7 @@ namespace VendingMachine_Test
         public void whenTooLittleCredit_vendingMachineDisplaysCostOfItem()
         {
             VendingMachine vm = add2QuartersToNewVendingMachine();
-            vm.pressProductButton(vm.productButton.Candy);
+            vm.pressProductButton(candyButton);
             Assert.AreEqual(vm.display.displayMessage(), "0.65");
         }
 
@@ -69,7 +77,34 @@ namespace VendingMachine_Test
         public void whenMachineDoesNotContainCoins_displayDisplaysInsertCoins()
         {
             VendingMachine vm = new VendingMachine();
+            vm.putChangeInChangeBank(5, 5, 5);
             Assert.AreEqual(vm.display.displayMessage(), "INSERT COIN");
+        }
+
+        [TestMethod]
+        public void whenInvalidCoinIsPlacedInMachine_ItIsDivertedToTheCoinReturnSlot()
+        {
+            const string badCoin = "wooden nickel";
+            List<string> coinReturn = new List<string>();
+            coinReturn.Add(badCoin);
+            VendingMachine vm = new VendingMachine();
+            vm.insert(badCoin);
+            CollectionAssert.AreEqual(coinReturn, vm.coinReturn.slot());
+        }
+
+        [TestMethod]
+        public void whenProductButtonIsPressedAndThereIsNoProductToDispense_displayReads_SOLD_OUT()
+        {
+            VendingMachine vm = addOneDollarToNewVendingMachine();
+            vm.pressProductButton(colaButton);
+            Assert.AreEqual("SOLD OUT", vm.display.displayMessage());
+        }
+
+        [TestMethod]
+        public void whenBankDoesNotContainEnoughChangeToReturnIfAnItemIsPurchased_Display_Exact_Change_Only_message()
+        {
+            VendingMachine vm = new VendingMachine();
+            Assert.AreEqual(vm.display.displayMessage(), "EXACT CHANGE ONLY");            
         }
 
         private VendingMachine addOneDollarToNewVendingMachine()

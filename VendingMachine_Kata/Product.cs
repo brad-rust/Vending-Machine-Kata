@@ -8,20 +8,34 @@ namespace VendingMachine_Kata
 {
     public class Product
     {
-        public string name { private set; get; }
-        public double cost { private set; get; }
+        public string name { protected set; get; }
+        public double cost { protected set; get; }
+    }
 
-        private readonly Dictionary<string, double> products = new Dictionary<string, double>
+    public class Chips : Product
+    {
+        public Chips()
         {
-            {"chips", .5 },
-            {"cola", 1.0 },
-            {"candy", .65 }
-        };
+            this.name = "chips";
+            this.cost = .5;
+        }
+    }
 
-        public Product(string item)
+    public class Cola : Product
+    {
+        public Cola()
         {
-            this.name = item;
-            this.cost = products[this.name];
+            this.cost = 1.0;
+            this.name = "cola";
+        }
+    }
+
+    public class Candy : Product
+    {
+        public Candy()
+        {
+            this.cost = .65;
+            this.name = "candy";
         }
     }
 }
