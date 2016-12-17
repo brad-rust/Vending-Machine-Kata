@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendingMachine_Kata
 {
-    public class Button
+    public class ProductButton
     {
         public readonly string Chips = "chips";
         public readonly string Cola = "cola";

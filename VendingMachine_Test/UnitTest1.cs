@@ -36,7 +36,7 @@ namespace VendingMachine_Test
         public void whenEnoughCreditIsAvailable_VendingMachineVends_Item()
         {
             VendingMachine vm = add2QuartersToNewVendingMachine();
-            vm.pressButton(vm.button.Chips);
+            vm.pressProductButton(vm.productButton.Chips);
             List<string> items = new List<string>() { "chips" };
             CollectionAssert.AreEqual(vm.dispenser.contents, items);
         }
@@ -45,7 +45,7 @@ namespace VendingMachine_Test
         public void thankYouMessageIsDisplayed_afterMachineVendsItem()
         {
             VendingMachine vm = addOneDollarToNewVendingMachine();
-            vm.pressButton(vm.button.Chips);
+            vm.pressProductButton(vm.productButton.Chips);
             Assert.AreEqual(vm.display.displayMessage(), "THANK YOU");
         }
 
@@ -53,8 +53,16 @@ namespace VendingMachine_Test
         public void whenTooLittleCredit_vendingMachineDisplaysCostOfItem()
         {
             VendingMachine vm = add2QuartersToNewVendingMachine();
-            vm.pressButton(vm.button.Candy);
+            vm.pressProductButton(vm.productButton.Candy);
             Assert.AreEqual(vm.display.displayMessage(), "0.65");
+        }
+
+        [TestMethod]
+        public void whenReturnCoinsButtonIsPressed_CoinsAreReturnedTotheCoinSlot()
+        {
+            VendingMachine vm = add40CentsToVendingMachine();
+            vm.pressCoinReturnButton();
+
         }
 
         private VendingMachine addOneDollarToNewVendingMachine()
@@ -72,6 +80,15 @@ namespace VendingMachine_Test
             VendingMachine vm = new VendingMachine();
             vm.insert(sQuarter);
             vm.insert(sQuarter);
+            return vm;
+        }
+
+        private VendingMachine add40CentsToVendingMachine()
+        {
+            VendingMachine vm = new VendingMachine();
+            vm.insert(sDime);
+            vm.insert(sQuarter);
+            vm.insert(sNickle);
             return vm;
         }
     }

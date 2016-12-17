@@ -12,26 +12,29 @@ namespace VendingMachine_Kata
         public double credit { private set; get; }
         public Display display;
         public Dispenser dispenser;
-        public Button button;
+        public ProductButton productButton;
+        public CoinReturn coinReturn;
         private Coin coin;
-        
-
+        private List<Coin> insertedCoins;
 
         public VendingMachine()
         {
             this.display = new Display();
             this.dispenser = new Dispenser();
-            this.button = new Button();
+            this.productButton = new ProductButton();
+            this.coinReturn = new CoinReturn();
+            this.insertedCoins = new List<Coin>();
         }
 
         public void insert(string _coin)
         {
             coin = new Coin(_coin);
             this.credit += coin.value;
+            this.insertedCoins.Add(coin);
             this.display.setDisplayToCredit(this.credit);            
         }
 
-        public void pressButton(string item)
+        public void pressProductButton(string item)
         {
             Product product = new Product(item);
             if (this.credit >= product.cost)
@@ -42,5 +45,15 @@ namespace VendingMachine_Kata
             else
                 this.display.setDisplayToPrice(product.cost);
         }
+
+        public void pressCoinReturnButton()
+        {
+            foreach(Coin coin in this.insertedCoins)
+            {
+                this.coinReturn.placeCoinInSlot(coin);
+            }
+            this.insertedCoins = new List<Coin>();
+        }
+
     }
 }
