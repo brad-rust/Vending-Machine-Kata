@@ -1,0 +1,10 @@
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\VendingMachine_Kata\bin\Debug\VendingMachine_Kata.dll
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\VendingMachine_Kata\bin\Debug\VendingMachine_Kata.pdb
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.csprojResolveAssemblyReference.cache
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.dll
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.pdb
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\bin\Debug\VendingMachine_Kata.dll
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\bin\Debug\VendingMachine_Kata.pdb
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.csprojResolveAssemblyReference.cache
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.dll
+C:\Users\oddlo\Desktop\Git\VendingMachine_Kata\obj\Debug\VendingMachine_Kata.pdb

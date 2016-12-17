@@ -1,0 +1,48 @@
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+<<<<<<< HEAD:VendingMachine_Kata/VendingMachine_Test/Properties/AssemblyInfo.cs:VendingMachine_Kata/VendingMachine_Test/Properties/AssemblyInfo.cs
+[assembly: AssemblyTitle("VendingMachine_Test")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("VendingMachine_Test")]
+=======
+[assembly: AssemblyTitle("VendingMachine_Kata")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("VendingMachine_Kata")]
+>>>>>>> 90a8da80aad007a48d68fdcc197a5f38a4137cf4:RedPencil_Kata/RedPencil_Kata/Properties/AssemblyInfo.cs:RedPencil_Kata/RedPencil_Kata/Properties/AssemblyInfo.cs
+[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+<<<<<<< HEAD:VendingMachine_Kata/VendingMachine_Test/Properties/AssemblyInfo.cs:VendingMachine_Kata/VendingMachine_Test/Properties/AssemblyInfo.cs
+[assembly: Guid("19e9b2ed-7541-4daa-8fe2-a12bd215cc69")]
+=======
+[assembly: Guid("235b144b-c36a-48db-b5b0-34775f5cd785")]
+>>>>>>> 90a8da80aad007a48d68fdcc197a5f38a4137cf4:RedPencil_Kata/RedPencil_Kata/Properties/AssemblyInfo.cs:RedPencil_Kata/RedPencil_Kata/Properties/AssemblyInfo.cs
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
