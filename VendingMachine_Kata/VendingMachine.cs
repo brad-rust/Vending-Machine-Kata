@@ -21,7 +21,7 @@ namespace VendingMachine_Kata
         Product candy;
         Product cola;
         Product chips;
-        private ChangeBank changeBank;
+        public ChangeBank changeBank;
 
         public VendingMachine()
         {
@@ -74,6 +74,9 @@ namespace VendingMachine_Kata
                 {
                     this.dispenser.addContents(product.name);
                     this.display.setDisplayThankYou();
+                    this.credit -= product.cost;
+                    if (!changeBank.exactChangeRequired())
+                        returnChange();
                 }
                 else
                     this.display.setDisplayToSoldOut();
@@ -97,6 +100,17 @@ namespace VendingMachine_Kata
             products.Add(ProductButton.Candy.ToString(), this.candy);
             products.Add(ProductButton.Cola.ToString(), this.cola);
             products.Add(ProductButton.Chips.ToString(), this.chips);   
+        }
+
+        private void returnChange()
+        {
+            while(this.credit > .04)
+            {
+                Coin coin = this.changeBank.getLargestCoinPossible(this.credit);
+                this.coinReturn.placeCoinInSlot(coin);
+                this.credit -= coin.value;
+            }
+            this.credit = 0;
         }
     }
 }

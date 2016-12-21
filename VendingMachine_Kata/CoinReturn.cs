@@ -24,5 +24,6 @@ namespace VendingMachine_Kata
         {
             return this.Slot;
         }  
+
     }
 }

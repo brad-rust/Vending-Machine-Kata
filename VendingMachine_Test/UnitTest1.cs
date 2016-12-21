@@ -107,6 +107,20 @@ namespace VendingMachine_Test
             Assert.AreEqual(vm.display.displayMessage(), "EXACT CHANGE ONLY");            
         }
 
+        [TestMethod]
+        public void whenMoreThanTheAmountRequiredToPurchaseAnItemIsInserted_machineGivesCorrectChangeBack()
+        {
+            VendingMachine vm = add2QuartersToNewVendingMachine();
+            vm.insert(sDime);
+            vm.insert(sNickle);
+            vm.changeBank.putCoinsInBank(5, 5, 5);
+            Product product = new Chips();
+            vm.inventory.addInventory(product, 1);
+            vm.pressProductButton(chipsButton);
+            List<string> returnedCoins = new List<string> { sDime, sNickle };
+            CollectionAssert.AreEqual(returnedCoins, vm.coinReturn.slot());
+        }
+
         private VendingMachine addOneDollarToNewVendingMachine()
         {
             VendingMachine vm = new VendingMachine();

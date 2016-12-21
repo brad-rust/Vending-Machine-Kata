@@ -1,0 +1,4 @@
+﻿  hackerRankSandbox.cpp
+c:\users\oddlo\desktop\git\hackerranksandbox\hackerranksandbox\hackerranksandbox.cpp(30): warning C4018: '<': signed/unsigned mismatch
+  hackerRankSandbox.vcxproj -> C:\Users\oddlo\Desktop\Git\hackerRankSandbox\Debug\hackerRankSandbox.exe
+  hackerRankSandbox.vcxproj -> C:\Users\oddlo\Desktop\Git\hackerRankSandbox\Debug\hackerRankSandbox.pdb (Full PDB)

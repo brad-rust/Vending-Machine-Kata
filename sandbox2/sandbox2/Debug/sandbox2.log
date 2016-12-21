@@ -1,0 +1,13 @@
+﻿  sandbox2.cpp
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(15): error C2065: 'string': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(15): error C2146: syntax error: missing ';' before identifier 'pounds'
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(15): error C2065: 'pounds': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(15): error C2065: 'poundsAndSpaces': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(16): error C2065: 'pounds': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(16): error C2228: left of '.insert' must have class/struct/union
+  c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(16): note: type is 'unknown-type'
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(18): error C2065: 'poundsAndSpaces': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(18): error C2228: left of '.insert' must have class/struct/union
+  c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(18): note: type is 'unknown-type'
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(20): error C2065: 'poundsAndSpaces': undeclared identifier
+c:\users\oddlo\desktop\git\sandbox2\sandbox2\sandbox2.cpp(20): error C2065: 'endl': undeclared identifier

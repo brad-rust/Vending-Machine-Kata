@@ -13,7 +13,7 @@ namespace VendingMachine_Kata
 
         private readonly Dictionary<string, double> validCoins = new Dictionary<string, double>
         {
-            {"nickel", 05 },
+            {"nickel", .05 },
             {"dime", .10 },
             {"quarter", .25 }
         };
